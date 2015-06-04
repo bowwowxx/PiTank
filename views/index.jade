@@ -1,0 +1,62 @@
+extends layout
+
+block content
+	.row
+		.twelve.columns.text-center
+			.panel
+				h1 Bow-wow PiTank Center
+				h5.subheader
+					| The only place to control the PiTank.
+					| <strong>May the force be with you!<strong>
+	.row
+		.six.columns.centered
+			.panel
+					.row
+						.six.columns.centered.text-center
+							h3#Output 20
+							input(type='range', min='1', max='180', step='1')
+							br
+							br
+							a#VisionButton.button.alert Vision
+						hr
+					.row
+						.offset-by-img
+							iframe(frameborder='0',width='100%',height='100%',scrolling='no',src='http://172.20.10.4:8080/javascript_simple.html')
+						hr
+					.row
+						.offset-by-fourM.columns
+							a.button.large.up U
+					.row
+						.offset-by-twoM.columns
+							a.button.large.left L
+							a.button.large.stop S
+							a.button.large.right R
+					.row
+						.offset-by-fourM.columns
+							a.button.large.down D
+					.row
+						hr
+						.six.columns.centered.text-center
+							h2 30°N
+							h4.subheader current position
+
+	script(type='text/javascript')
+		$("#VisionButton").on('click', function(){
+			$.get('/blink', function(){
+				});
+		});
+		$('.right').on('click', function(){
+			$.get('/turnRight');
+		});
+		$('.left').on('click', function(){
+			$.get('/turnLeft');
+		});
+		$('.up').on('click', function(){
+			$.get('/turnUp');
+		});
+		$('.down').on('click', function(){
+			$.get('/turnDown');
+		});
+		$('.stop').on('click', function(){
+			$.get('/turnStop');
+		});
