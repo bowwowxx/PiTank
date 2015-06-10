@@ -80,11 +80,11 @@ websock.on('request', function (request) {
     
         connection.on('close', function (connection) {
                 //close connection
-                piblaster.setPwm(22, 0);
+                piblaster.setPwm(24, 0);
         });
 
         function closePin() {
-                piblaster.setPwm(22, 0);
+                piblaster.setPwm(24, 0);
         }
 
 });

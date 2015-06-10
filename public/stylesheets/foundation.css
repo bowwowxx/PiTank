@@ -258,7 +258,7 @@ form.custom .custom.disabled { background-color: #dddddd; }
 .row .offset-by-two { margin-left: 16.66667%; }
 
 .row .offset-by-twoM { margin-left: 21.8%; }
-.row .offset-by-img { margin-left: 12%;width: 320px;height: 240px}
+.row .offset-by-img { margin-left: 12%;width: 100%;height: 100%;}
 
 .row .offset-by-three { margin-left: 25%; }
 
